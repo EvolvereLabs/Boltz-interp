@@ -1,0 +1,245 @@
+{
+  "layer": 2,
+  "rec": 50,
+  "concept_set": "swissprot",
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "n_proteins": 99,
+  "n_residues": 44968,
+  "n_neurons": 768,
+  "n_latents": 2048,
+  "n_perm": 100,
+  "per_concept": {
+    "beta_strand": {
+      "n_seeds": 3,
+      "sae_f1_mean": 0.2024608823758197,
+      "sae_f1_std": 0.005363523654400455,
+      "sae_null_mean": 0.12543897834348636,
+      "sae_sig_mean": 0.07702190403233336,
+      "sae_sig_std": 0.00367408236815257,
+      "sae_p_value_max": 0.009900990099009901,
+      "sae_winning_idx_per_seed": [
+        1489,
+        1230,
+        946
+      ],
+      "probe_sae_f1_mean": 0.152809912526321,
+      "probe_sae_f1_std": 0.0017986582549647029,
+      "neuron_f1": 0.22691508991874787,
+      "neuron_null_mean": 0.14038015206101917,
+      "probe_raw_f1": 0.13468543121267493
+    },
+    "binding_site:substrate": {
+      "n_seeds": 3,
+      "sae_f1_mean": 0.04784810569405201,
+      "sae_f1_std": 0.0026732185614509337,
+      "sae_null_mean": 0.0345545286271729,
+      "sae_sig_mean": 0.013293577066879107,
+      "sae_sig_std": 0.0035481321478148613,
+      "sae_p_value_max": 0.26732673267326734,
+      "sae_winning_idx_per_seed": [
+        1443,
+        1523,
+        592
+      ],
+      "probe_sae_f1_mean": 0.005143753150790888,
+      "probe_sae_f1_std": 0.0009112989760760279,
+      "neuron_f1": 0.035164834854431795,
+      "neuron_null_mean": 0.03545475706821609,
+      "probe_raw_f1": 0.012232415600072885
+    },
+    "compositional_bias:basic_and_acidic_residues": {
+      "n_seeds": 3,
+      "sae_f1_mean": 0.1463008086302444,
+      "sae_f1_std": 0.01958026114284041,
+      "sae_null_mean": 0.11421589880593079,
+      "sae_sig_mean": 0.03208490982431361,
+      "sae_sig_std": 0.011084734094734547,
+      "sae_p_value_max": 0.0891089108910891,
+      "sae_winning_idx_per_seed": [
+        920,
+        642,
+        884
+      ],
+      "probe_sae_f1_mean": 0.10396397661870511,
+      "probe_sae_f1_std": 0.013562431241739089,
+      "neuron_f1": 0.1732004384998884,
+      "neuron_null_mean": 0.10546249475276355,
+      "probe_raw_f1": 0.19240506145744404
+    },
+    "compositional_bias:low_complexity": {
+      "n_seeds": 3,
+      "sae_f1_mean": 0.14442462880341309,
+      "sae_f1_std": 0.0036432688418064495,
+      "sae_null_mean": 0.08350276452064126,
+      "sae_sig_mean": 0.06092186428277183,
+      "sae_sig_std": 0.0030224819035697043,
+      "sae_p_value_max": 0.019801980198019802,
+      "sae_winning_idx_per_seed": [
+        548,
+        1148,
+        1664
+      ],
+      "probe_sae_f1_mean": 0.03646457173505482,
+      "probe_sae_f1_std": 0.0032452273727334715,
+      "neuron_f1": 0.11411634191888165,
+      "neuron_null_mean": 0.09670467082639057,
+      "probe_raw_f1": 0.14476190359673533
+    },
+    "compositional_bias:polar_residues": {
+      "n_seeds": 3,
+      "sae_f1_mean": 0.1652098462545004,
+      "sae_f1_std": 0.015040970181472829,
+      "sae_null_mean": 0.0728509902625739,
+      "sae_sig_mean": 0.09235885599192649,
+      "sae_sig_std": 0.014543155623838623,
+      "sae_p_value_max": 0.009900990099009901,
+      "sae_winning_idx_per_seed": [
+        1609,
+        1882,
+        1520
+      ],
+      "probe_sae_f1_mean": 0.07808566816341628,
+      "probe_sae_f1_std": 0.021635360099322792,
+      "neuron_f1": 0.13472015492325512,
+      "neuron_null_mean": 0.08244176195989845,
+      "probe_raw_f1": 0.10646388053247319
+    },
+    "disulfide_bond": {
+      "n_seeds": 3,
+      "sae_f1_mean": 0.09664755903898548,
+      "sae_f1_std": 0.0027342555505919033,
+      "sae_null_mean": 0.1241933151608852,
+      "sae_sig_mean": -0.02754575612189972,
+      "sae_sig_std": 0.00477085487814642,
+      "sae_p_value_max": 0.9801980198019802,
+      "sae_winning_idx_per_seed": [
+        1580,
+        29,
+        85
+      ],
+      "probe_sae_f1_mean": 0.1948566058084181,
+      "probe_sae_f1_std": 0.027060956865102185,
+      "neuron_f1": 0.10108303317613022,
+      "neuron_null_mean": 0.12815658062930071,
+      "probe_raw_f1": 0.2606741522466454
+    },
+    "glycosylation:n-linked_glcnac_asparagine": {
+      "n_seeds": 3,
+      "sae_f1_mean": 0.0289150091002499,
+      "sae_f1_std": 0.004088340524314338,
+      "sae_null_mean": 0.015990970681197054,
+      "sae_sig_mean": 0.012924038419052852,
+      "sae_sig_std": 0.004475561189430393,
+      "sae_p_value_max": 0.0891089108910891,
+      "sae_winning_idx_per_seed": [
+        989,
+        1513,
+        1426
+      ],
+      "probe_sae_f1_mean": 0.03894604216136709,
+      "probe_sae_f1_std": 0.008339261505635801,
+      "neuron_f1": 0.028169014702098455,
+      "neuron_null_mean": 0.02097771267128822,
+      "probe_raw_f1": 0.08853118600971453
+    },
+    "helix": {
+      "n_seeds": 3,
+      "sae_f1_mean": 0.2059452390861298,
+      "sae_f1_std": 0.006439437729222451,
+      "sae_null_mean": 0.17586254224194245,
+      "sae_sig_mean": 0.03008269684418734,
+      "sae_sig_std": 0.005551224272661044,
+      "sae_p_value_max": 0.009900990099009901,
+      "sae_winning_idx_per_seed": [
+        51,
+        1322,
+        1586
+      ],
+      "probe_sae_f1_mean": 0.33994875543183506,
+      "probe_sae_f1_std": 0.007972442996021315,
+      "neuron_f1": 0.23507421649672097,
+      "neuron_null_mean": 0.20517396644840932,
+      "probe_raw_f1": 0.24253628480141143
+    },
+    "modified_residue:phosphoserine": {
+      "n_seeds": 3,
+      "sae_f1_mean": 0.018538883179186175,
+      "sae_f1_std": 0.002322454211172265,
+      "sae_null_mean": 0.019068064690167648,
+      "sae_sig_mean": -0.0005291815109814725,
+      "sae_sig_std": 0.0037065309926316977,
+      "sae_p_value_max": 0.4752475247524752,
+      "sae_winning_idx_per_seed": [
+        227,
+        1882,
+        81
+      ],
+      "probe_sae_f1_mean": 0.029673152196969848,
+      "probe_sae_f1_std": 0.011187103757805695,
+      "neuron_f1": 0.016842105649514872,
+      "neuron_null_mean": 0.021787591104523125,
+      "probe_raw_f1": 0.03789473603967154
+    },
+    "region:disordered": {
+      "n_seeds": 3,
+      "sae_f1_mean": 0.6747934535297612,
+      "sae_f1_std": 0.019128342859191128,
+      "sae_null_mean": 0.40001948345309496,
+      "sae_sig_mean": 0.2747739700766663,
+      "sae_sig_std": 0.03245344548981458,
+      "sae_p_value_max": 0.009900990099009901,
+      "sae_winning_idx_per_seed": [
+        1503,
+        1640,
+        1567
+      ],
+      "probe_sae_f1_mean": 0.6794513498371866,
+      "probe_sae_f1_std": 0.006828973370995198,
+      "neuron_f1": 0.7462212270253238,
+      "neuron_null_mean": 0.38454617240850086,
+      "probe_raw_f1": 0.7702820437981691
+    },
+    "signal_peptide": {
+      "n_seeds": 3,
+      "sae_f1_mean": 0.22743711533229927,
+      "sae_f1_std": 0.011057573753179043,
+      "sae_null_mean": 0.08210719428583896,
+      "sae_sig_mean": 0.14532992104646028,
+      "sae_sig_std": 0.012416185637206948,
+      "sae_p_value_max": 0.009900990099009901,
+      "sae_winning_idx_per_seed": [
+        1375,
+        1599,
+        1623
+      ],
+      "probe_sae_f1_mean": 0.2091266304342644,
+      "probe_sae_f1_std": 0.053624681841326675,
+      "neuron_f1": 0.2502299907095664,
+      "neuron_null_mean": 0.08683900477961386,
+      "probe_raw_f1": 0.4657534343548934
+    },
+    "turn": {
+      "n_seeds": 3,
+      "sae_f1_mean": 0.0530363815517521,
+      "sae_f1_std": 0.0030283920382115355,
+      "sae_null_mean": 0.03968275189511603,
+      "sae_sig_mean": 0.013353629656636072,
+      "sae_sig_std": 0.004348531658726926,
+      "sae_p_value_max": 0.12871287128712872,
+      "sae_winning_idx_per_seed": [
+        29,
+        1860,
+        1038
+      ],
+      "probe_sae_f1_mean": 0.029035563874490748,
+      "probe_sae_f1_std": 0.004122880406170859,
+      "neuron_f1": 0.05283018976540147,
+      "neuron_null_mean": 0.04262657769913362,
+      "probe_raw_f1": 0.024216215336709233
+    }
+  }
+}

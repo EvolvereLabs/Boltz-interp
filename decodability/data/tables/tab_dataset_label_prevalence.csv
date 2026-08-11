@@ -1,0 +1,19 @@
+dataset,concept,pos_residues,pos_domains,n_proteins_with_concept,set_n_proteins,set_n_residues
+Boltz Secondary,secondary_structure:coil,72856,14526,486,486,196136
+Boltz Secondary,secondary_structure:helix,98574,7737,485,486,196136
+Boltz Secondary,secondary_structure:strand,24706,6982,428,486,196136
+DSSP Secondary,secondary_structure:coil,78873,9787,393,393,154299
+DSSP Secondary,secondary_structure:helix,56977,4760,393,393,154299
+DSSP Secondary,secondary_structure:strand,18449,5108,324,393,154299
+SwissProt,beta_strand,2033,352,23,99,44968
+SwissProt,binding_site:substrate,83,50,15,99,44968
+SwissProt,compositional_bias:basic_and_acidic_residues,506,30,18,99,44968
+SwissProt,compositional_bias:low_complexity,278,16,13,99,44968
+SwissProt,compositional_bias:polar_residues,279,19,12,99,44968
+SwissProt,disulfide_bond,1179,25,12,99,44968
+SwissProt,glycosylation:n-linked_glcnac_asparagine,47,47,13,99,44968
+SwissProt,helix,2810,295,23,99,44968
+SwissProt,modified_residue:phosphoserine,26,25,10,99,44968
+SwissProt,region:disordered,3949,73,39,99,44968
+SwissProt,signal_peptide,480,22,22,99,44968
+SwissProt,turn,275,80,22,99,44968

@@ -1,0 +1,36 @@
+[project]
+name = "boltz-causal-intervention"
+version = "0.1.0"
+description = "Directional-ablation causal experiments on Boltz-1 (Paper A R7/R8)"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+    "numpy",
+    "torch>=2.0.0",
+    "pyyaml",       # build_inputs.py parses/rewrites Boltz input YAMLs
+    "matplotlib",   # every scripts/make_*.py + analyze_null.py figure
+    "pillow",       # PIL.Image in assemble_structure_viz_bidir_chimera.py
+    "pydssp",       # DSSP secondary-structure readout -- load-bearing for EVERY
+                    # reported figure, so not optional despite the guarded import
+                    # in structural_readout.py (which silently returns NaN without it)
+    # Boltz-1 fork (installed from the local nutz_and_boltz checkout / EvolvereLabs fork):
+    #   pip install -e ../nutz_and_boltz
+    # "nutz_and_boltz",
+    # It also pulls in the GPU-only runtime deps that boltz_causal/boltz_runtime.py
+    # imports lazily inside functions: pytorch_lightning and tensorlens (branch
+    # feature/io-queue-2). Plotting and `pytest tests/` need none of them.
+    # boto3 is only for the S3 sharding path in build_inputs.py -> [aws] extra.
+]
+
+[tool.setuptools]
+packages = ["boltz_causal"]
+
+[project.optional-dependencies]
+aws = ["boto3"]
+dev = ["pytest", "ruff"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

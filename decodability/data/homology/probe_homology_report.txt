@@ -1,0 +1,33 @@
+============================================================
+Probe eval-set homology leakage report
+============================================================
+Proteins: 486
+Identity threshold: 30%
+Folds (GroupKFold by protein): 5
+
+Proteins with >=1 near-homolog (>30% ID) in the set:
+  18 / 486 (3.7%)
+
+Total pairs above threshold: 9
+
+Per-fold leakage (test proteins with a training-fold homolog):
+  Fold 0: 2/98 test proteins (2.0%) have a >30% ID neighbour in train
+  Fold 1: 3/97 test proteins (3.1%) have a >30% ID neighbour in train
+  Fold 2: 6/97 test proteins (6.2%) have a >30% ID neighbour in train
+  Fold 3: 2/97 test proteins (2.1%) have a >30% ID neighbour in train
+  Fold 4: 5/97 test proteins (5.2%) have a >30% ID neighbour in train
+
+Overall: 18/486 test-protein appearances (3.7%) have a training-fold near-homolog
+
+Interpretation: because both stacks (pairformer and diffusion) use identical protein sets and identical fold assignments, any inflation of absolute probe-raw F1 due to leakage is common-mode and cannot explain the differential attenuation of sequence-chemistry signals in the diffusion module.
+
+Top 10 highest-identity pairs:
+  A7Z063  A8K0Z3  87.5%
+  P28797  P28798  60.7%
+  Q8IWB7  Q96P53  60.2%
+  A2SWM2  Q7ZU13  50.6%
+  P02547  P15331  38.3%
+  A0R2N3  Q87PH8  36.5%
+  P11980  Q2RAK2  33.1%
+  Q6PGK7  Q8NET6  30.6%
+  Q06ZW3  Q96T68  30.5%

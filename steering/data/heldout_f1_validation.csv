@@ -1,0 +1,4 @@
+concept,heldout_F1,precision,recall,pos_frac,paper_probe_raw_F1
+helix,0.827,0.980,0.715,0.343,0.79-0.90
+strand,0.779,0.931,0.670,0.139,~0.79
+coil,0.883,0.899,0.867,0.518,~0.88

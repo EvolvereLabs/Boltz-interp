@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "boltz-paper-a-decodability"
+version = "0.1.0"
+description = "Paper A decodability pipeline: Boltz-1 activation downloads, SwissProt/DSSP annotation, SAE training, and held-out probe / single-feature F1 benchmarks across the Pairformer trunk and diffusion module."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Paper A authors"},
+]
+keywords = ["protein", "structure-prediction", "interpretability", "sparse-autoencoder", "boltz"]
+
+dependencies = [
+    "numpy>=1.21.0",
+    "pandas>=1.3.0",
+    "boto3>=1.26.0",            # S3 / Cloudflare-R2 activation downloads (get_activations.py)
+    "botocore>=1.29.0",
+    "requests>=2.28.0",         # HuggingFace SAE checkpoint fetch (layer_analysis_utils.py)
+    "biopython>=1.79",          # sequence-identity leakage control (check_probe_homology.py)
+    "tqdm>=4.64.0",
+    "python-dotenv>=1.0.0",     # loads .env for R2 credentials
+    "scipy>=1.7.0",
+    "typed-argument-parser>=1.8.0",  # tap; CLI for run_layer_benchmark et al.
+    "torch>=2.0.0",             # TopK SAE training / encoding (sae_utils.py, train_sae.py)
+    "matplotlib>=3.6.0",        # figure builders
+    "ipykernel>=7.0.0",         # nbconvert execution of the figure notebooks
+    "nbformat>=5.0.0",          # _build_paper_a_figures.py generates .ipynb
+    "pydssp>=0.9.1",            # DSSP secondary-structure labels
+    "scikit-learn>=1.1.0",      # logistic probes (linear_probe.py)
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0.0", "ruff>=0.1.0"]
+
+# Scripts live at the top level of decodability/ and import each other as flat
+# siblings — run everything with decodability/ as the working directory.
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "N", "UP"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

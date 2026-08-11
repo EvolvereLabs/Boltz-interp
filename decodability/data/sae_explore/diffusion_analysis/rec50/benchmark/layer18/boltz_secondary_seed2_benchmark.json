@@ -1,0 +1,84 @@
+{
+  "layer": 18,
+  "concept_set": "boltz_secondary",
+  "annotation_dir": "processed_swissprot_a5_boltz_secondary",
+  "seed": 2,
+  "rec": 50,
+  "layer_type": "diffusion",
+  "sae_repo": "s3 (diffusion)",
+  "n_annotated": 486,
+  "n_proteins": 486,
+  "n_residues": 196136,
+  "n_neurons": 768,
+  "n_latents": 2048,
+  "n_perm": 100,
+  "threshold_pcts": [
+    50.0,
+    75.0,
+    90.0,
+    95.0,
+    99.0
+  ],
+  "per_concept": {
+    "secondary_structure:coil": {
+      "sae": {
+        "f1": 0.6305427553367653,
+        "feature_idx": 324,
+        "threshold_pct": 50.0,
+        "null_mean": 0.5115144539005003,
+        "null_p95": 0.5135617683592053,
+        "p_value": 0.009900990099009901
+      },
+      "neuron": {
+        "f1": 0.6115323390599765,
+        "feature_idx": 52,
+        "threshold_pct": 50.0,
+        "null_mean": 0.5229172605654268,
+        "null_p95": 0.5242738958070601,
+        "p_value": 0.009900990099009901
+      },
+      "probe_raw_f1": 0.8010533325031456,
+      "probe_sae_f1": 0.7494008719062424
+    },
+    "secondary_structure:helix": {
+      "sae": {
+        "f1": 0.7508795636077186,
+        "feature_idx": 1851,
+        "threshold_pct": 50.0,
+        "null_mean": 0.6722511116877287,
+        "null_p95": 0.6755630468193905,
+        "p_value": 0.009900990099009901
+      },
+      "neuron": {
+        "f1": 0.7225109591920542,
+        "feature_idx": 143,
+        "threshold_pct": 50.0,
+        "null_mean": 0.6771603166539112,
+        "null_p95": 0.6797969357627945,
+        "p_value": 0.009900990099009901
+      },
+      "probe_raw_f1": 0.9042368265824913,
+      "probe_sae_f1": 0.8930470873241454
+    },
+    "secondary_structure:strand": {
+      "sae": {
+        "f1": 0.39625833002510485,
+        "feature_idx": 1336,
+        "threshold_pct": 50.0,
+        "null_mean": 0.2463483812019832,
+        "null_p95": 0.2490446884178738,
+        "p_value": 0.009900990099009901
+      },
+      "neuron": {
+        "f1": 0.4153305894638153,
+        "feature_idx": 434,
+        "threshold_pct": 90.0,
+        "null_mean": 0.2677638608090195,
+        "null_p95": 0.2706513985474954,
+        "p_value": 0.009900990099009901
+      },
+      "probe_raw_f1": 0.7761190607277972,
+      "probe_sae_f1": 0.7141978833288065
+    }
+  }
+}

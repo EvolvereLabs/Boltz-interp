@@ -1,0 +1,74 @@
+{
+  "layer": 18,
+  "rec": 10,
+  "concept_set": "secondary",
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "n_proteins": 393,
+  "n_residues": 154299,
+  "n_neurons": 768,
+  "n_latents": 2048,
+  "n_perm": 100,
+  "per_concept": {
+    "secondary_structure:coil": {
+      "n_seeds": 3,
+      "sae_f1_mean": 0.7355773048614416,
+      "sae_f1_std": 0.01922677462439225,
+      "sae_null_mean": 0.6374569458311536,
+      "sae_sig_mean": 0.09812035903028793,
+      "sae_sig_std": 0.016942435469846546,
+      "sae_p_value_max": 0.009900990099009901,
+      "sae_winning_idx_per_seed": [
+        365,
+        1400,
+        846
+      ],
+      "probe_sae_f1_mean": 0.8342100008918126,
+      "probe_sae_f1_std": 0.0009096457001872734,
+      "neuron_f1": 0.7644395220630784,
+      "neuron_null_mean": 0.6501969294035951,
+      "probe_raw_f1": 0.8801177563526088
+    },
+    "secondary_structure:helix": {
+      "n_seeds": 3,
+      "sae_f1_mean": 0.6573268351992269,
+      "sae_f1_std": 0.013191043515774171,
+      "sae_null_mean": 0.5387852439460484,
+      "sae_sig_mean": 0.11854159125317835,
+      "sae_sig_std": 0.012401305065055103,
+      "sae_p_value_max": 0.009900990099009901,
+      "sae_winning_idx_per_seed": [
+        1405,
+        1985,
+        1925
+      ],
+      "probe_sae_f1_mean": 0.8528385917539824,
+      "probe_sae_f1_std": 0.0013690281501678137,
+      "neuron_f1": 0.6319933933662226,
+      "neuron_null_mean": 0.5487882714072919,
+      "probe_raw_f1": 0.8399876323800853
+    },
+    "secondary_structure:strand": {
+      "n_seeds": 3,
+      "sae_f1_mean": 0.45013262997191267,
+      "sae_f1_std": 0.004933679918327408,
+      "sae_null_mean": 0.2442686096081471,
+      "sae_sig_mean": 0.20586402036376558,
+      "sae_sig_std": 0.010221334034033035,
+      "sae_p_value_max": 0.009900990099009901,
+      "sae_winning_idx_per_seed": [
+        428,
+        588,
+        605
+      ],
+      "probe_sae_f1_mean": 0.7196371935735959,
+      "probe_sae_f1_std": 0.0017589432534894723,
+      "neuron_f1": 0.4249821838976064,
+      "neuron_null_mean": 0.25980144709938524,
+      "probe_raw_f1": 0.7868875219721563
+    }
+  }
+}

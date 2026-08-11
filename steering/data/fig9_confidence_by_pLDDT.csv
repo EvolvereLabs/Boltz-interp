@@ -1,0 +1,7 @@
+concept,bin,mean_paired,sem,n
+helix,low pLDDT (<75),0.0624,0.0146,51
+coil,low pLDDT (<75),0.0938,0.0139,51
+helix_sae,low pLDDT (<75),0.0443,0.0083,51
+helix,high pLDDT (>=75),0.0125,0.0024,46
+coil,high pLDDT (>=75),0.0252,0.0058,46
+helix_sae,high pLDDT (>=75),0.0111,0.0023,46

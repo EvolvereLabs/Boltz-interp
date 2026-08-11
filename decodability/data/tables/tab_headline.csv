@@ -1,0 +1,9 @@
+concept,trunk,diffusion,delta
+Coil,0.903,0.902,-0.001
+Helix,0.847,0.827,-0.019
+Strand,0.822,0.819,-0.003
+Disordered,0.864,0.704,-0.161
+Signal peptide,0.758,0.354,-0.404
+Disulfide bond,0.432,0.096,-0.336
+AA identity (probe),0.996,0.656,-0.34
+AA identity (SAE-1feat),0.863,0.297,-0.566

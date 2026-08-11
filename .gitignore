@@ -1,0 +1,43 @@
+# --- secrets / credentials ---
+.env
+*/.env
+.env.local
+
+# --- python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+
+# --- large downloaded artifacts (fetched via docs/DATA_ACCESS.md) ---
+# raw Boltz-1 activations
+decodability/downloads/
+decodability/downloads_layer*/
+decodability/downloads_diffusion_rec*/
+# SAE checkpoints / caches
+decodability/sae_runs/
+decodability/sae_explore/           # HF cache + training caches (committed summary lives in decodability/data/)
+# generated notebooks (rebuilt by the _build_*.py generators)
+decodability/paper_a_figures.ipynb
+decodability/paper_a_supplementary.ipynb
+
+# --- steering run outputs (rerun via docs/STEERING_METHODS.md) ---
+steering/inputs/
+steering/outputs/
+
+# --- os / editor ---
+.DS_Store
+Thumbs.db
+
+# derived cache: 486x486 identity matrix, regenerate with check_probe_homology.py
+decodability/data/homology/probe_homology_matrix.npy
+
+# manuscript text kept locally; the paper links this repo, not the reverse
+paper-text.txt

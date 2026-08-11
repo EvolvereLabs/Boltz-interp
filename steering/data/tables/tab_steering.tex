@@ -1,0 +1,22 @@
+\begin{table}[H]\centering
+  \caption{Paired steering effects on the concept's own DSSP state (held-out,
+  dose $k{=}16$, $n{=}97$ proteins). Effect $=$ per-protein
+  (concept-add $-$ random-add) with 95\% paired-protein bootstrap CI
+  ($B{=}10{,}000$); $z$ is the population effect against a 19-direction
+  matched-norm random null (Fig.~\ref{fig:steer_null}). Mean pLDDT stays stable
+  ($\sim$79) across conditions.}
+  \label{tab:steering}
+  \small
+  \begin{tabular}{llccc}
+    \toprule
+    Concept & Direction & Paired effect (95\% CI) & $z$ vs.\ null & Verdict \\
+    \midrule
+    Coil   & probe     & $+0.061\ [+0.045,+0.079]$ & $+11.5$ & steers (strongest) \\
+    Helix  & probe     & $+0.039\ [+0.025,+0.056]$ & $+6.2$ & steers \\
+    Helix  & SAE-1feat & $+0.029\ [+0.020,+0.038]$ & $+5.0$ & steers \\
+    Coil   & SAE-1feat & $+0.001\ [-0.005,+0.007]$ & $-0.1$ & null \\
+    Strand & SAE-1feat & $+0.001\ [-0.001,+0.003]$ & $+1.0$ & null \\
+    Strand & probe     & $-0.001\ [-0.003,+0.001]$ & $+0.3$ & null \\
+    \bottomrule
+  \end{tabular}
+\end{table}

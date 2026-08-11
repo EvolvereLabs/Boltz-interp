@@ -1,0 +1,7 @@
+concept,mean,ci_lo,ci_hi,n,excludes_zero
+coil,0.0613,0.0454,0.0787,97,True
+helix,0.0387,0.0246,0.0560,97,True
+helix_sae,0.0286,0.0197,0.0383,97,True
+strand_sae,0.0006,-0.0012,0.0029,97,False
+coil_sae,0.0010,-0.0048,0.0067,97,False
+strand,-0.0006,-0.0027,0.0010,97,False
