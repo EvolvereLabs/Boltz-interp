@@ -76,11 +76,32 @@ Notes on the invocation:
    path or `evolve-away`, the training config was pickled into the checkpoint.
    Re-save those checkpoints with the offending fields stripped, then re-run the
    mirror. Uploading them as-is leaks through a `strings` call on the download.
-3. **Repoint the code you submit.** `decodability/layer_analysis_utils.py`
-   hardcodes `evolve-away/Boltz1-SAEs-L2` and `…-rec0` in `REPO_ID` /
-   `REC_REPO_IDS`, and the top-level `README.md` links the `evolve-away`
-   collection. An anonymous code drop has to point at the mirror instead, or a
-   reviewer following the SAE download deanonymises the submission in one click.
+3. **Repoint the code you submit — and mind the repo *names*.**
+   `decodability/layer_analysis_utils.py` hardcodes `evolve-away/Boltz1-SAEs-L2`
+   and `…-rec0` in `REPO_ID` / `REC_REPO_IDS`, and the top-level `README.md`
+   links the `evolve-away` collection. An anonymous code drop has to point at
+   the mirror instead, or a reviewer following the SAE download deanonymises the
+   submission in one click.
+
+   A find-and-replace of the namespace alone is **not** enough. The collection
+   holds three repos:
+
+   | in the collection            | what the code asks for |
+   | ---------------------------- | ---------------------- |
+   | `Boltz1-SAEs-L2-rec1`        | `Boltz1-SAEs-L2`       |
+   | `Boltz1-SAEs-L2-rec0`        | `Boltz1-SAEs-L2-rec0`  |
+   | `Boltz1-SAEs-L2-Diffusion`   | (not referenced)       |
+
+   The rec-1 names differ. `evolve-away/Boltz1-SAEs-L2` presumably still
+   resolves because HF redirects a renamed repo from its old name — but the
+   mirror is a *brand-new* repo called `…-rec1`, and new repos carry no such
+   redirect. So `REPO_ID` and `REC_REPO_IDS[1]` need the name changed as well as
+   the namespace, or the anonymous code 404s on every rec-1 download.
+
+   Separately, `download_run_checkpoint` still raises
+   `"there is no HF fallback"` for `layer_type != "pairformer"`, which is now
+   stale: `Boltz1-SAEs-L2-Diffusion` exists. A reviewer trying to reproduce the
+   diffusion results will hit that error even though the weights are published.
 4. **Scrub `LICENSE`.** It reads `Copyright (c) 2026 Evolvere Biosciences`. Keep
    MIT, but the copyright line has to go for the review copy.
 5. **Do not link back.** The anonymous repos must not reference the real GitHub

@@ -97,21 +97,34 @@ class Report:
     patched: list[str] = field(default_factory=list)
     flagged: list[str] = field(default_factory=list)
     skipped: list[str] = field(default_factory=list)
+    dry_run: bool = False
 
     def render(self) -> str:
+        # A dry run never downloads, so it never scrubs. Saying "(none)" under
+        # NEEDS A HUMAN LOOK would read as "nothing to worry about" when the
+        # truth is "nothing was inspected" -- say so instead.
+        scan_placeholder = (
+            "(not checked -- a dry run downloads nothing, so no file was scanned; "
+            "re-run with --execute for the real report)"
+            if self.dry_run
+            else "(none)"
+        )
+        # from_scan marks sections whose contents only exist after a real run.
         sections = [
-            ("Repos mirrored", self.created),
-            ("Files rewritten", self.patched),
-            ("NEEDS A HUMAN LOOK", self.flagged),
-            ("Skipped", self.skipped),
+            ("Repos mirrored", self.created, "(none)", False),
+            ("Files rewritten", self.patched, scan_placeholder, True),
+            ("NEEDS A HUMAN LOOK", self.flagged, scan_placeholder, True),
+            ("Skipped", self.skipped, "(none)", False),
         ]
         lines: list[str] = []
-        for title, rows in sections:
-            lines.append(f"\n=== {title} ({len(rows)}) ===")
+        for title, rows, placeholder, from_scan in sections:
+            unknown = self.dry_run and from_scan and not rows
+            count = "?" if unknown else len(rows)
+            lines.append(f"\n=== {title} ({count}) ===")
             if rows:
                 lines.extend(f"  {row}" for row in rows)
             else:
-                lines.append("  (none)")
+                lines.append(f"  {placeholder}")
         return "\n".join(lines)
 
 
@@ -288,7 +301,7 @@ def main() -> int:
 
     api = HfApi()
     subs = build_subs(args.dst_namespace, args.extra_sub)
-    report = Report()
+    report = Report(dry_run=args.dry_run)
     workdir = Path(args.workdir)
 
     print(f"Reading collection {args.src_collection} ...")
