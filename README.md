@@ -39,9 +39,9 @@ pipeline (the companion study referenced in §3.4) live in their own repos.
   subproject's `data/`.
 - **External** (large): the trunk **SAE checkpoints** are public on **HuggingFace**
   ([collection](https://huggingface.co/collections/evolve-away/boltz-saes)) and pulled automatically.
-  The raw per-residue **activations** and the diffusion-module SAEs live in private storage
-  (Cloudflare R2 / S3) — **credentials on request**, since they run to hundreds of GB. None of this is
-  needed for the quick start below. Full instructions:
+  The **diffusion-module SAEs** are public too. Only the raw per-residue
+  **activations** live in private storage (Cloudflare R2 / S3) — **credentials on request**, since
+  they run to hundreds of GB. None of this is needed for the quick start below. Full instructions:
   **[`docs/DATA_ACCESS.md`](docs/DATA_ACCESS.md)**.
 
 ## Quick start — regenerate every figure and table from committed data

@@ -97,11 +97,20 @@ downloads them automatically (no `huggingface_hub` or GPU required — it fetche
 |---|---|---|---|
 | Pairformer trunk | rec 1 (main text) | `evolve-away/Boltz1-SAEs-L2` | public |
 | Pairformer trunk | rec 0 | `evolve-away/Boltz1-SAEs-L2-rec0` | public |
-| Diffusion module | steps 0/50/199 … | `s3://boltz-saes-l2/diffusion/rec{R}/layer{N}/` | private — credentials on request |
+| Diffusion module | steps 0/10/50 | `evolve-away/Boltz1-SAEs-L2-Diffusion` | public |
+| Diffusion module | fuller step set | `s3://boltz-saes-l2/diffusion/rec{R}/layer{N}/` | private — credentials on request |
 
-The **diffusion-module** SAEs are not published: they sit in a private S3 bucket and are staged by
-`stage_diffusion_data.py`, which uses the standard boto3 credential chain. Request access alongside
-the activations (§1).
+The **diffusion-module** SAEs *are* published, in `evolve-away/Boltz1-SAEs-L2-Diffusion`: sampling
+steps 0/10/50, layers 0/2/4/10/14/18/22 (layer 10 is absent at step 10), 3 seeds each — 60 runs. Note
+the input width there is 768, against 384 for the trunk repos, and runs sit one level deeper, under
+`rec{STEP}/layer{N}/`.
+
+Two caveats. `download_run_checkpoint` does **not** fetch them: it raises for
+`layer_type != "pairformer"` by design, so that a missing staging step cannot silently load trunk
+weights in their place. Use `huggingface_hub` directly for the published copies, or keep staging from
+S3 with `stage_diffusion_data.py` (standard boto3 credential chain) as the analysis workflow does.
+And the S3 bucket holds a fuller set of sampling steps than the published subset, so request access
+alongside the activations (§1) if you need the steps that are not on HuggingFace.
 
 Recipe: TopK SAE, `k=256`, 2048 latents, trained on **demeaned** activations, L2 = 3e-3, 3 seeds,
 500k steps.
