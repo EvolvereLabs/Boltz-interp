@@ -1,7 +1,6 @@
 # Boltz-Paper-A — reproduction suite
 
-Reproducibility code and summary data for **"What survives in the diffusion module? Biology in
-Boltz-1's trunk and decoder."**
+Reproducibility code and summary data for **"Probing and steering biology across Boltz-1"**
 
 The paper has two halves, and so does this repo:
 
