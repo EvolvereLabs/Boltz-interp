@@ -1,4 +1,4 @@
-# Boltz-Paper-A — reproduction suite
+# Boltz-interpretability 
 
 Reproducibility code and summary data for **"Probing and steering biology across Boltz-1"**
 
