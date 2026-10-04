@@ -69,7 +69,7 @@ cd decodability
 # Pairformer trunk, layer 20, recycle 1, for the SwissProt eval set:
 python get_activations.py \
     --bucket THE_BUCKET_YOU_WERE_ISSUED \
-    --manifest inputs/SwissProtproteins.txt \
+    --manifest inputs/common_activation_proteins_manifest.txt \
     --layer_type pairformer \
     --layer 20 --rec 1 \
     --out downloads_layer20
@@ -77,6 +77,12 @@ python get_activations.py \
 
 > **Why a manifest is required.** The R2 mirror is fronted by Cloudflare Sippy, which serves `GET`
 > but not `LIST`. So a client cannot enumerate the bucket; it must be told which keys to fetch.
+> Manifest lines are **full key prefixes** (`SwissProtAnnotation5/activations/<ID>/`), not bare
+> accessions: `get_activations.py` uses each line verbatim as the key prefix. The ready-made ones
+> are `common_activation_proteins_manifest.txt` (486, the eval set), `swissprot_a5_prefixes.txt`
+> (5,000) and `80proteins.txt` (84k training set, in the other bucket). The bare-accession lists
+> beside them (`common_activation_proteins.txt`, `SwissProtproteins.txt`, `swissprot_a5_ids.txt`)
+> are protein-ID lists used elsewhere in the pipeline and will **not** work as `--manifest`.
 > `generate_manifest.py` produces these listings and needs AWS access, so manifests are generated on
 > our side and shipped in `decodability/inputs/` (see the files listed there) or sent with your
 > credentials.

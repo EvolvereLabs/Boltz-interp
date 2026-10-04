@@ -52,7 +52,9 @@ Large-artifact locations and credentials: [`DATA_ACCESS.md`](DATA_ACCESS.md).
 `get_activations.py`
 - Downloads per-residue Boltz-1 activations from Cloudflare R2 / S3.
 - In: `--bucket`, `--manifest` (`inputs/80proteins.txt` for the 84k training set,
-  `inputs/SwissProtproteins.txt` for eval), `--layer`, `--rec`, `--layer_type`. All required.
+  `inputs/common_activation_proteins_manifest.txt` for the 486-protein eval set),
+  `--layer`, `--rec`, `--layer_type`. All required. Manifest lines are full key prefixes, not
+  bare accessions.
 - Out: `--out downloads_layer{N}/`.
 - Needs the R2/S3 credentials issued on request (see `DATA_ACCESS.md`); there is no anonymous access.
 
